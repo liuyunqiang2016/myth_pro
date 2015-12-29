@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblHousetypeDimBo" table="tbl_housetype_dim">
+		<id name="htCode" column="ht_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="htName" column="ht_name" type="java.lang.String" />
+		<property name="roCount" column="r_count" type="java.lang.String" />
+		<property name="toCount" column="t_count" type="java.lang.String" />
+		<property name="htUrl" column="ht_url" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

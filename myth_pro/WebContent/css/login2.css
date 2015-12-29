@@ -1,0 +1,31 @@
+﻿p,li,ul,dt,dl,dd,a,blockquote,body,h1,h2,h3,h4,h5,h6{padding:0px; margin:0px; text-decoration:none; font-size:12px;list-style-type:none;font-family:'微软雅黑',Arial; color:#484848;}
+a,span,label,b{ font-size:12px;}
+a{ text-decoration:none;}
+ul,li{text-decoration:none; list-style-type:none;}
+img{ border:0px; vertical-align:bottom;}
+input{ outline:none;}
+.clear{ clear:both;}
+.none{ display:none;}
+a:hover{ color:#D98E11; text-decoration:underline;}
+body{_behavior:url(css/csshover3.htc);padding:207px 0px 0px 0px; background:url(../pic/login_bg1.jpg) repeat-x 0px -50px;}
+#logincontent{ height:385px; background:url(../pic/login_logo1.jpg) no-repeat center 0px;  margin:0px auto;}
+#logincontent ul{ padding:160px 0px 0px 0px; width:265px; margin:0px auto;}
+#logincontent li{ padding:10px 0px 10px 30px;}
+#logincontent label{ color:White; vertical-align:middle; display:inline-block; width:45px;}
+#logincontent .text{ border:solid 1px #393939; padding:0px 8px; background-color:#101010; color:#989898; height:23px; line-height:23px; width:170px; vertical-align:middle;}
+#logincontent .btnli{ padding:10px 0px 0px 73px;}
+#logincontent .btn1{ margin:0px 3px 0px 0px; height:34px; border:0px; cursor:pointer; background:url(../pic/loginbtn.jpg) no-repeat 0px -34px; width:93px;}
+#logincontent .btn1:hover{ background-position:0px 0px;}
+#logincontent .btn2{height:34px; border:0px; cursor:pointer; background:url(../pic/loginbtn.jpg) no-repeat right -34px; width:93px;}
+#logincontent .btn2:hover{ background-position:right 0px;}
+#footer{ padding:10px 0px 0px 40px; text-align:center; line-height:20px; color:#323232;}
+#logincontent{}
+#logincontent .list{ width:auto; padding:160px 0px 0px 0px; width:800px; margin:0px auto;}
+#logincontent .list li{ padding:0px 32px; overflow:hidden; float:left; width:135px; text-align:center;}
+#logincontent .list .name{ line-height:28px; color:White; font-size:16px; display:block; margin:10px auto 0px auto; width:108px; height:28px; background:url(../pic/loginwordbg.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/loginwordbg.png',sizingMethod='image');}
+#logincontent .list .name:hover{ text-decoration:none; color:#EE9736;}
+#logincontent .list .link{ display:block; width:135px; height:135px; overflow:hidden;}
+#logincontent .list .link1{background:url(../pic/loginpic01.png) no-repeat!important;background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/loginpic01.png',sizingMethod='image');}
+#logincontent .list .link2{background:url(../pic/loginpic02.png) no-repeat!important;background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/loginpic02.png',sizingMethod='image');}
+#logincontent .list .link3{background:url(../pic/loginpic03.png) no-repeat!important;background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/loginpic03.png',sizingMethod='image');}
+#logincontent .list .link4{background:url(../pic/loginpic04.png) no-repeat!important;background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/loginpic04.png',sizingMethod='image');}

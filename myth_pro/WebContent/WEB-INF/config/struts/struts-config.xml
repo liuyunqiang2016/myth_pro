@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" 
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="OrgDimForm"
+			type="com.viatt.zhjtpro.forms.OrgDimForm" />
+		<form-bean name="TblRoleDimForm"
+			type="com.viatt.zhjtpro.forms.TblRoleDimForm" />
+		<form-bean name="TblMenuDimForm"
+			type="com.viatt.zhjtpro.forms.TblMenuDimForm" />
+		<form-bean name="TblUserDimForm"
+			type="com.viatt.zhjtpro.forms.TblUserDimForm" />
+		<form-bean name="TblParamDimForm"
+			type="com.viatt.zhjtpro.forms.TblParamDimForm" />
+		<form-bean name="TblCalDimForm"
+			type="com.viatt.zhjtpro.forms.TblCalDimForm" />
+		<form-bean name="TblItemDimForm"
+			type="com.viatt.zhjtpro.forms.TblItemDimForm" />
+		<form-bean name="TblLogDimForm"
+			type="com.viatt.zhjtpro.forms.TblLogDimForm" />
+			
+		<form-bean name="TblCommDimForm"
+			type="com.viatt.zhjtpro.forms.TblCommDimForm" />
+		<form-bean name="TblAreaDimForm"
+			type="com.viatt.zhjtpro.forms.TblAreaDimForm" />
+		<form-bean name="TblBuildingDimForm"
+			type="com.viatt.zhjtpro.forms.TblBuildingDimForm" />
+		<form-bean name="TblUnitDimForm"
+			type="com.viatt.zhjtpro.forms.TblUnitDimForm" />
+		<form-bean name="TblPropertyDimForm"
+			type="com.viatt.zhjtpro.forms.TblPropertyDimForm" />
+			
+		<form-bean name="TblHousetypeDimForm"
+			type="com.viatt.zhjtpro.forms.TblHousetypeDimForm" />
+		<form-bean name="TblRoomDimForm"
+			type="com.viatt.zhjtpro.forms.TblRoomDimForm" />
+		<form-bean name="TblOwnerDimForm"
+			type="com.viatt.zhjtpro.forms.TblOwnerDimForm" />
+		<form-bean name="TblCardDimForm"
+			type="com.viatt.zhjtpro.forms.TblCardDimForm" />
+		<form-bean name="TblFingDimForm"
+			type="com.viatt.zhjtpro.forms.TblFingDimForm" />
+		<form-bean name="TblContrDimForm"
+			type="com.viatt.zhjtpro.forms.TblContrDimForm" />
+		<form-bean name="TblNoticeDimForm"
+			type="com.viatt.zhjtpro.forms.TblNoticeDimForm" />
+		<form-bean name="TblAdDimForm"
+			type="com.viatt.zhjtpro.forms.TblAdDimForm" />
+		<form-bean name="TblServiceDimForm"
+			type="com.viatt.zhjtpro.forms.TblServiceDimForm" />
+		<form-bean name="TblEquDimForm"
+			type="com.viatt.zhjtpro.forms.TblEquDimForm" />
+		<form-bean name="TblSoftDimForm"
+			type="com.viatt.zhjtpro.forms.TblSoftDimForm" />
+		<form-bean name="TblBillsDimForm"
+			type="com.viatt.zhjtpro.forms.TblBillsDimForm" />
+		<form-bean name="TblInfoStatusDimForm"
+			type="com.viatt.zhjtpro.forms.TblInfoStatusDimForm" />
+		<form-bean name="TblFingStatusDimForm"
+			type="com.viatt.zhjtpro.forms.TblFingStatusDimForm" />
+		<form-bean name="TblVisitorDimForm"
+			type="com.viatt.zhjtpro.forms.TblVisitorDimForm" />
+		<form-bean name="TblInnerStatusDimForm"
+			type="com.viatt.zhjtpro.forms.TblInnerStatusDimForm" />
+	</form-beans>
+
+	<global-exceptions></global-exceptions>
+
+	<global-forwards>
+		<forward name="SUCCESS" path="/share/commonsuccess.jsp"></forward>
+		<forward name="FAIL" path="/share/commonerror.jsp"></forward>
+		<forward name="LOGIN" path="/login.jsp"></forward>
+		<forward name="FINDPASSWORD" path="/findPassword.jsp"></forward>
+		<forward name="UPDATEPASSWORD" path="/updatePassword.jsp"></forward>
+		<forward name="JSON" path="/api_output.jsp"></forward>
+		<forward name="LOGOUT" path="/logout.jsp"></forward>
+		<forward name="INDEX" path="/index.jsp"></forward>
+		<forward name="MAIN" path="/main.jsp"></forward>
+		<forward name="DEFAULT" path="/loginindex.jsp" redirect="true"></forward>
+		<forward name="CHPW" path="/changePwd.jsp" redirect="true"></forward>
+	</global-forwards>
+
+	<action-mappings>
+	
+		<!-- 小区管理 -->
+		<action path="/commDim" name="TblCommDimForm" attribute="TblCommDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblCommDimAction">
+			<forward name="addTblCommDim"
+				path="/business/commDim/addTblCommDim.jsp">
+			</forward>
+			<forward name="queryCommDim"
+				path="/business/commDim/queryTblCommDim.jsp">
+			</forward>
+			<forward name="tblCommDim"
+				path="/commDim.do?method=queryTblCommDim">
+			</forward>
+		</action>
+		
+		<action path="/areaDim" name="TblAreaDimForm" attribute="TblAreaDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblAreaDimAction">
+			<forward name="addTblAreaDim"
+				path="/business/areaDim/addTblAreaDim.jsp">
+			</forward>
+			<forward name="queryAreaDim"
+				path="/business/areaDim/queryTblAreaDim.jsp">
+			</forward>
+			<forward name="forGenAreaDim"
+				path="/business/areaDim/genAreaDim.jsp">
+			</forward>
+			<forward name="tblAreaDim"
+				path="/areaDim.do?method=queryTblAreaDim">
+			</forward>
+		</action>
+		<action path="/buildingDim" name="TblBuildingDimForm" attribute="TblBuildingDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblBuildingDimAction">
+			<forward name="addTblBuildingDim"
+				path="/business/buildingDim/addTblBuildingDim.jsp">
+			</forward>
+			<forward name="queryBuildingDim"
+				path="/business/buildingDim/queryTblBuildingDim.jsp">
+			</forward>
+			<forward name="forGenBuildingDim"
+				path="/business/buildingDim/genBuildingDim.jsp">
+			</forward>
+			<forward name="tblBuildingDim"
+				path="/buildingDim.do?method=queryTblBuildingDim">
+			</forward>
+		</action>
+		<action path="/unitDim" name="TblUnitDimForm" attribute="TblUnitDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblUnitDimAction">
+			<forward name="addTblUnitDim"
+				path="/business/unitDim/addTblUnitDim.jsp">
+			</forward>
+			<forward name="queryUnitDim"
+				path="/business/unitDim/queryTblUnitDim.jsp">
+			</forward>
+			<forward name="forGenUnitDim"
+				path="/business/unitDim/genUnitDim.jsp">
+			</forward>
+			<forward name="tblUnitDim"
+				path="/unitDim.do?method=queryTblUnitDim">
+			</forward>
+		</action>
+		<action path="/propertyDim" name="TblPropertyDimForm" attribute="TblPropertyDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblPropertyDimAction">
+			<forward name="addTblPropertyDim"
+				path="/business/propertyDim/addTblPropertyDim.jsp">
+			</forward>
+			<forward name="queryPropertyDim"
+				path="/business/propertyDim/queryTblPropertyDim.jsp">
+			</forward>
+			<forward name="deletePropertyDim"
+				path="/business/propertyDim/deletePropertyDim.jsp">
+			</forward>
+			<forward name="tblPropertyDim"
+				path="/propertyDim.do?method=querypropertyDim">
+			</forward>
+		</action>
+		<action path="/housetypeDim" name="TblHousetypeDimForm" attribute="TblHousetypeDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblHousetypeDimAction">
+			<forward name="addTblHousetypeDim"
+				path="/business/housetypeDim/addTblHousetypeDim.jsp">
+			</forward>
+			<forward name="queryHousetypeDim"
+				path="/business/housetypeDim/queryTblHousetypeDim.jsp">
+			</forward>
+			<forward name="tblHousetypeDim"
+				path="/housetypeDim.do?method=queryTblHousetypeDim">
+			</forward>
+		</action>
+		<action path="/roomDim" name="TblRoomDimForm" attribute="TblRoomDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblRoomDimAction">
+			<forward name="addTblRoomDim"
+				path="/business/roomDim/addTblRoomDim.jsp">
+			</forward>
+			<forward name="queryRoomDim"
+				path="/business/roomDim/queryTblRoomDim.jsp">
+			</forward>
+			<forward name="forGenRoomDim"
+				path="/business/roomDim/genRoomDim.jsp">
+			</forward>
+			<forward name="viewTblRoomDim"
+				path="/business/roomDim/viewTblRoomDim.jsp">
+			</forward>
+			<forward name="tblRoomDim"
+				path="/roomDim.do?method=queryTblRoomDim">
+			</forward>
+		</action>
+		<action path="/ownerDim" name="TblOwnerDimForm" attribute="TblOwnerDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblOwnerDimAction">
+			<forward name="addTblOwnerDim"
+				path="/business/ownerDim/addTblOwnerDim.jsp">
+			</forward>
+			<forward name="queryOwnerDim"
+				path="/business/ownerDim/queryTblOwnerDim.jsp">
+			</forward>
+			<forward name="viewTblOwnerDim"
+				path="/business/ownerDim/viewTblOwnerDim.jsp">
+			</forward>
+			<forward name="tblOwnerDim"
+				path="/ownerDim.do?method=queryTblOwnerDim">
+			</forward>
+		</action>
+		<action path="/cardDim" name="TblCardDimForm" attribute="TblCardDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblCardDimAction">
+			<forward name="addTblCardDim"
+				path="/business/cardDim/addTblCardDim.jsp">
+			</forward>
+			<forward name="queryCardDim"
+				path="/business/cardDim/queryTblCardDim.jsp">
+			</forward>
+			<forward name="viewTblCardDim"
+				path="/business/cardDim/viewTblCardDim.jsp">
+			</forward>
+			<forward name="tblCardDim"
+				path="/cardDim.do?method=queryTblCardDim">
+			</forward>
+		</action>
+		<action path="/fingDim" name="TblFingDimForm" attribute="TblFingDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblFingDimAction">
+			<forward name="addTblFingDim"
+				path="/business/fingDim/addTblFingDim.jsp">
+			</forward>
+			<forward name="queryFingDim"
+				path="/business/fingDim/queryTblFingDim.jsp">
+			</forward>
+			<forward name="viewTblFingDim"
+				path="/business/fingDim/viewTblFingDim.jsp">
+			</forward>
+			<forward name="tblFingDim"
+				path="/fingDim.do?method=queryTblFingDim">
+			</forward>
+		</action>
+		<action path="/contrDim" name="TblContrDimForm" attribute="TblContrDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblContrDimAction">
+			<forward name="queryContrDim"
+				path="/business/contrDim/queryTblContrDim.jsp">
+			</forward>
+			<forward name="tblContrDim"
+				path="/contrDim.do?method=queryTblContrDim">
+			</forward>
+		</action>
+		<action path="/logDim" name="TblLogDimForm" attribute="TblLogDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblLogDimAction">
+			<forward name="queryLogDim"
+				path="/sys_mng/logDim/queryTblLogDim.jsp">
+			</forward>
+			<forward name="tblLogDim"
+				path="/logDim.do?method=queryTblLogDim">
+			</forward>
+		</action>
+		
+		<action path="/noticeDim" name="TblNoticeDimForm" attribute="TblNoticeDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblNoticeDimAction">
+			<forward name="addTblNoticeDim"
+				path="/business/noticeDim/addTblNoticeDim.jsp">
+			</forward>
+			<forward name="queryNoticeDim"
+				path="/business/noticeDim/queryTblNoticeDim.jsp">
+			</forward>
+			<forward name="queryTblNoticeDimIndex"
+				path="/business/noticeDim/queryTblNoticeDimIndex.jsp">
+			</forward>
+			<forward name="viewTblNoticeDim"
+				path="/business/noticeDim/viewTblNoticeDim.jsp">
+			</forward>
+			<forward name="tblNoticeDim"
+				path="/noticeDim.do?method=queryTblNoticeDim">
+			</forward>
+		</action>
+		<action path="/adDim" name="TblAdDimForm" attribute="TblAdDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblAdDimAction">
+			<forward name="addTblAdDim"
+				path="/business/adDim/addTblAdDim.jsp">
+			</forward>
+			<forward name="queryAdDim"
+				path="/business/adDim/queryTblAdDim.jsp">
+			</forward>
+			<forward name="viewTblAdDim"
+				path="/business/adDim/viewTblAdDim.jsp">
+			</forward>
+			<forward name="tblAdDim"
+				path="/adDim.do?method=queryTblAdDim">
+			</forward>
+		</action>
+		<action path="/serviceDim" name="TblServiceDimForm" attribute="TblServiceDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblServiceDimAction">
+			<forward name="addTblServiceDim"
+				path="/business/serviceDim/addTblServiceDim.jsp">
+			</forward>
+			<forward name="queryServiceDim"
+				path="/business/serviceDim/queryTblServiceDim.jsp">
+			</forward>
+			<forward name="queryServiceDimForWarn"
+				path="/business/serviceDim/queryTblServiceDimForWarn.jsp">
+			</forward>
+			<forward name="queryServiceDimIndex"
+				path="/business/serviceDim/queryTblServiceDimIndex.jsp">
+			</forward>
+			<forward name="viewTblServiceDim"
+				path="/business/serviceDim/viewTblServiceDim.jsp">
+			</forward>
+			<forward name="tblServiceDim"
+				path="/serviceDim.do?method=queryTblServiceDim">
+			</forward>
+		</action>
+		<action path="/equDim" name="TblEquDimForm" attribute="TblEquDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblEquDimAction">
+			<forward name="addTblEquDim"
+				path="/business/equDim/addTblEquDim.jsp">
+			</forward>
+			<forward name="queryEquDim"
+				path="/business/equDim/queryTblEquDim.jsp">
+			</forward>
+			<forward name="viewTblEquDim"
+				path="/business/equDim/viewTblEquDim.jsp">
+			</forward>
+			<forward name="tblEquDim"
+				path="/equDim.do?method=queryTblEquDim">
+			</forward>
+		</action>
+		<action path="/softDim" name="TblSoftDimForm" attribute="TblSoftDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblSoftDimAction">
+			<forward name="addTblSoftDim"
+				path="/business/softDim/addTblSoftDim.jsp">
+			</forward>
+			<forward name="querySoftDim"
+				path="/business/softDim/queryTblSoftDim.jsp">
+			</forward>
+			<forward name="viewTblSoftDim"
+				path="/business/softDim/viewTblSoftDim.jsp">
+			</forward>
+			<forward name="tblSoftDim"
+				path="/softDim.do?method=queryTblSoftDim">
+			</forward>
+		</action>
+		<!--固件 -->
+		<action path="/softFirmwareDim" name="TblSoftDimForm" attribute="TblSoftDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblSoftFirmwareDimAction">
+			<forward name="addTblSoftDim"
+				path="/business/softFirmwareDim/addTblSoftDim.jsp">
+			</forward>
+			<forward name="querySoftDim"
+				path="/business/softFirmwareDim/queryTblSoftDim.jsp">
+			</forward>
+			<forward name="viewTblSoftDim"
+				path="/business/softFirmwareDim/viewTblSoftDim.jsp">
+			</forward>
+			<forward name="tblSoftDim"
+				path="/softFirmwareDim.do?method=queryTblSoftDim">
+			</forward>
+		</action>
+		<action path="/calDim" name="TblCalDimForm" attribute="TblCalDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblCalDimAction">
+			<forward name="addTblCalDim"
+				path="/business/calDim/addTblCalDim.jsp">
+			</forward>
+			<forward name="queryCalDim"
+				path="/business/calDim/queryTblCalDim.jsp">
+			</forward>
+			<forward name="viewTblCalDim"
+				path="/business/calDim/viewTblCalDim.jsp">
+			</forward>
+			<forward name="tblCalDim"
+				path="/calDim.do?method=queryTblCalDim">
+			</forward>
+		</action>
+		<action path="/itemDim" name="TblItemDimForm" attribute="TblItemDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblItemDimAction">
+			<forward name="addTblItemDim"
+				path="/business/itemDim/addTblItemDim.jsp">
+			</forward>
+			<forward name="queryItemDim"
+				path="/business/itemDim/queryTblItemDim.jsp">
+			</forward>
+			<forward name="viewTblItemDim"
+				path="/business/itemDim/viewTblItemDim.jsp">
+			</forward>
+			<forward name="tblItemDim"
+				path="/itemDim.do?method=queryTblItemDim">
+			</forward>
+		</action>
+		<action path="/billsDim" name="TblBillsDimForm" attribute="TblBillsDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblBillsDimAction">
+			<forward name="addTblBillsDim"
+				path="/business/billsDim/addTblBillsDim.jsp">
+			</forward>
+			<forward name="queryBillsDim"
+				path="/business/billsDim/queryTblBillsDim.jsp">
+			</forward>
+			<forward name="viewTblBillsDim"
+				path="/business/billsDim/viewTblBillsDim.jsp">
+			</forward>
+			<forward name="tblBillsDim"
+				path="/billsDim.do?method=queryTblBillsDim">
+			</forward>
+		</action>
+		<action path="/infoStatusDim" name="TblInfoStatusDimForm" attribute="TblInfoStatusDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblInfoStatusDimAction">
+			<forward name="queryInfoStatusDim"
+				path="/business/infoStatusDim/queryTblInfoStatusDim.jsp">
+			</forward>
+			<forward name="tblInfoStatusDim"
+				path="/infoStatusDim.do?method=queryTblInfoStatusDim">
+			</forward>
+		</action>
+		<!-- 指纹发送状态 -->
+		<action path="/fingStatusDim" name="TblFingStatusDimForm" attribute="TblFingStatusDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblFingStatusDimAction">
+			<forward name="queryFingStatusDim"
+				path="/business/fingStatusDim/queryTblFingStatusDim.jsp">
+			</forward>
+			<forward name="tblFingStatusDim"
+				path="/fingStatusDim.do?method=queryTblFingStatusDim">
+			</forward>
+		</action>
+		<action path="/visitorDim" name="TblVisitorDimForm" attribute="TblVisitorDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblVisitorDimAction">
+			<forward name="queryVisitorDim"
+				path="/business/visitorDim/queryTblVisitorDim.jsp">
+			</forward>
+			<forward name="tblVisitorDim"
+				path="/visitorDim.do?method=queryTblVisitorDim">
+			</forward>
+		</action>
+		
+		<action path="/innerEquOp" name="TblEquDimForm" attribute="TblEquDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblInnerEquOpAction">
+			<forward name="queryOuterEquDim"
+				path="/business/innerequOp/queryOuterEquDim.jsp">
+			</forward>
+			<forward name="queryInnerEquDim"
+				path="/business/innerequOp/queryInnerEquDim.jsp">
+			</forward>
+			<forward name="queryAssignInnerEquDim"
+				path="/business/innerequOp/queryAssignInnerEquDim.jsp">
+			</forward>
+		</action>
+		<action path="/innerStatusDim" name="TblInnerStatusDimForm" attribute="TblInnerStatusDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblInnerStatusDimAction">
+			<forward name="queryInnerStatusDim"
+				path="/business/innerStatusDim/queryTblInnerStatusDim.jsp">
+			</forward>
+		</action>
+
+		<!-- 系统管理部分 -->
+		<action path="/user" name="TblUserDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.UserAction">
+			<forward name="edit"
+				path="/sys_mng/userDim/modifyUserInfo.jsp">
+			</forward>
+			<forward name="loginindex"
+				path="/loginindex.jsp">
+			</forward>
+		</action>
+		<action path="/orgDim" name="OrgDimForm" attribute="OrgDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.OrgDimAction">
+			<forward name="addTblOrgDim"
+				path="/sys_mng/orgDim/addTblOrgDim.jsp">
+			</forward>
+			<forward name="queryOrgDim"
+				path="/sys_mng/orgDim/queryTblOrgDim.jsp">
+			</forward>
+			<forward name="tblOrgDim"
+				path="/orgDim.do?method=queryTblOrgDim">
+			</forward>
+		</action>
+		
+		<action path="/roleDim" name="TblRoleDimForm" attribute="TblRoleDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblRoleDimAction">
+			<forward name="addTblRoleDim"
+				path="/sys_mng/roleDim/addTblRoleDim.jsp">
+			</forward>
+			<forward name="queryRoleDim"
+				path="/sys_mng/roleDim/queryTblRoleDim.jsp">
+			</forward>
+			<forward name="signTblRolemenuDim"
+				path="/sys_mng/roleDim/signTblRolemenuDim.jsp">
+			</forward>
+			<forward name="tblRoleDim"
+				path="/roleDim.do?method=queryTblRoleDim">
+			</forward>
+		</action>
+		
+		<action path="/menuDim" name="TblMenuDimForm" attribute="TblMenuDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblMenuDimAction">
+			<forward name="addTblMenuDim"
+				path="/sys_mng/menuDim/addTblMenuDim.jsp">
+			</forward>
+			<forward name="queryMenuDim"
+				path="/sys_mng/menuDim/queryTblMenuDim.jsp">
+			</forward>
+			<forward name="viewTblMenuDim"
+				path="/sys_mng/menuDim/viewTblMenuDim.jsp">
+			</forward>
+			<forward name="tblMenuDim"
+				path="/menuDim.do?method=queryTblMenuDim">
+			</forward>
+		</action>
+		<action path="/userDim" name="TblUserDimForm" attribute="TblUserDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblUserDimAction">
+			<forward name="addTblUserDim"
+				path="/sys_mng/userDim/addTblUserDim.jsp">
+			</forward>
+			<forward name="queryUserDim"
+				path="/sys_mng/userDim/queryTblUserDim.jsp">
+			</forward>
+			<forward name="viewTblUserDim"
+				path="/sys_mng/userDim/viewTblUserDim.jsp">
+			</forward>
+			<forward name="tblUserDim"
+				path="/userDim.do?method=queryTblUserDim">
+			</forward>
+		</action>
+		
+		<action path="/paramDim" name="TblParamDimForm" attribute="TblParamDimForm"
+			scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TblParamDimAction">
+			<forward name="addTblParamDim"
+				path="/sys_mng/paramDim/addTblParamDim.jsp">
+			</forward>
+			<forward name="queryParamDim"
+				path="/sys_mng/paramDim/queryTblParamDim.jsp">
+			</forward>
+			<forward name="viewTblParamDim"
+				path="/sys_mng/paramDim/viewTblParamDim.jsp">
+			</forward>
+			<forward name="tblParamDim"
+				path="/paramDim.do?method=queryTblParamDim">
+			</forward>
+		</action>
+
+
+		<!-- 辅助的action -->
+		<action path="/tree" scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.TreeAction">
+			<forward name="treePage" path="/share/tree/Tree.jsp"></forward>
+		</action>
+
+		<action path="/share/frame" scope="request" validate="false"
+			type="com.viatt.zhjtpro.action.FrameAction">
+			<forward name="frame" path="/sysMange/index.jsp"></forward>
+		</action>
+
+	</action-mappings>
+</struts-config>

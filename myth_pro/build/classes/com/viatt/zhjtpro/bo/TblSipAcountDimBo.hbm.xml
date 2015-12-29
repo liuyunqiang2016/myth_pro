@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblSipAcountDimBo" table="tbl_sipAcount_dim">
+		<id name="acountId" column="acount_id" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="username" column="username" type="java.lang.String" />
+		<property name="password" column="password" type="java.lang.String" />
+		<property name="type" column="type" type="java.lang.String" />
+		<property name="commPro" column="comm_pro" type="java.lang.String" />
+		<property name="groupId" column="group_id" type="java.lang.String" />
+		<property name="remark" column="remark" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+﻿#maincontent{}
+#maincontent .submitcontent{ padding:15px 20px;}
+#maincontent .submitcontent li{ padding:7px 0px;}
+#maincontent .submitcontent .text{ width:275px; height:26px; padding:0px 8px; border:solid 1px #D7D7D7; line-height:26px; vertical-align:middle;}
+#maincontent .submitcontent label{ text-align:right; padding:0px  5px 0px 0px; display:inline-block; width:100px; font-size:16px; }
+#maincontent .submitcontent span{ color:#DD4D4C; display:inline-block; width:20px; text-align:center; vertical-align:middle;}
+#maincontent .submitcontent .searchbtn{ width:89px; vertical-align:middle; margin:0px 5px; height:28px; background:url(../pic/searchbtn.jpg) no-repeat 0px 0px; border:0px; cursor:pointer;}
+#maincontent .submitcontent .time{ padding:0px 26px 0px 8px; background:url(../pic/timebtn.jpg) no-repeat right 0px White;}
+#maincontent .submitcontent .checkbox{ vertical-align:middle; margin:-2px 5px 0px 15px;}
+#maincontent .submitcontent .savebtn{ vertical-align:middle; margin:0px 10px 0px 25px;cursor:pointer; height:28px; border:0px; background:url(../pic/save_cancelbtn.jpg) no-repeat 0px 0px; width:79px;}
+#maincontent .submitcontent .cancelbtn{ cursor:pointer; vertical-align:middle; height:28px; border:0px; background:url(../pic/save_cancelbtn.jpg) no-repeat right 0px; width:79px;}
+#maincontent .submitcontent .btnspan{margin:0px 5px; width:auto;}
+#maincontent .submitcontent .pic{ }
+.searchcontent{ background-color:#E6E6E6; border-bottom:solid 1px #CFCFCF; background-color:#EFEFEF;}
+.searchcontent h3{ padding:0px 20px; height:36px; line-height:36px; overflow:hidden; background:url(../pic/singletitle_bg.jpg) repeat-x 0px 0px;}
+.searchcontent h3 strong{ display:block; height:36px; font-weight:normal; padding:0px 0px 0px 25px; background:url(../pic/singlepic01.jpg) no-repeat 0px 10px; font-size:16px;}
+.searchcontent .txtcontent{ line-height:28px; padding:15px 0px 15px 20px;}
+.searchcontent .txtcontent label{ display:inline-block; width:100px; text-align:right; font-size:16px;}
+.searchcontent .txtcontent .text{ width:160px; height:26px; padding:0px 8px; border:solid 1px #D7D7D7; line-height:26px; vertical-align:middle;}
+.searchcontent .txtcontent .time{padding:0px 26px 0px 8px; width:120px; background:url(../pic/timebtn.jpg) no-repeat right 0px White;}
+.searchcontent .txtcontent span{ padding:0px 15px; font-size:16px;}
+.searchcontent .txtcontent .searchbtn{ width:89px;vertical-align:middle; margin:0px 5px 0px 20px; height:28px; background:url(../pic/searchbtn.jpg) no-repeat 0px 0px; border:0px; cursor:pointer;}
+.searchcontent .txtcontent .cancelbtn{ width:89px; vertical-align:middle; margin:0px 5px; height:28px; background:url(../pic/searchbtn.jpg) no-repeat right 0px; border:0px; cursor:pointer;}
+.searchcontent .txtcontent .btnspanr{margin:0px 0px 0px 10px; padding:0px 10px 0px 0px;}
+.searchcontent .txtcontent .pic{ padding:0px; }
+#maincontent .singleinner{  position:relative; padding:15px 20px;}
+#maincontent .singleinner .content{width:46%; float:left;}
+#maincontent .singleinner .r{ float:right;}
+#maincontent .singleinner h3{ font-size:16px; line-height:20px; padding:0px 0px 5px 0px; font-weight:normal;}
+#maincontent .innertable{min-height:345px; _height:345px;}
+#maincontent .tablecontent{  background-color:White; border:solid 1px #DADADA; border-bottom-width:0px;}
+#maincontent .tablecontent .table{ width:100%;}
+#maincontent .tablecontent th{text-align:left; padding:0px 10px; border-left:solid 1px #717171; font-size:14px; color:White; height:35px; line-height:35px; background:url(../pic/title_bg.jpg) repeat-x 0px 0px;}
+#maincontent .tablecontent td{white-space:nowrap; overflow:hidden; line-height:20px; padding:5px 10px; background-color:White; border-bottom:solid 1px #DADADA;}
+#maincontent .tablecontent .t1{ width:5%;}
+#maincontent .tablecontent .t2{ width:10%;}
+#maincontent .tablecontent .t3{ width:25%;}
+#maincontent .tablecontent .t4{ width:15%;}
+#maincontent .tablecontent .t5{ width:12%;}
+#maincontent .tablecontent .t6{ width:33%;}
+#maincontent .tablecontent .split td{ background-color:#F7F7F7;}
+#maincontent .tablecontent tr:hover td{ background-color:#FECE78;}
+.btnlist{ margin:150px 0px 0px 0px; width:8%;  float:left;}
+.btnlist li{ margin:5px auto; height:28px;  width:37px; background:url(../pic/singlebtn_bg.jpg) no-repeat 0px 0px;}
+.btnlist li:hover,.btnlist .current{ background-position:0px -37px;}
+.btnlist input{ border:0px; cursor:pointer; width:37px; height:28px;}
+.btnlist .btn1{ background:url(../pic/singlebtn1.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/singlebtn1.png',sizingMethod='image');}
+.btnlist .btn2{ background:url(../pic/singlebtn2.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/singlebtn2.png',sizingMethod='image');}
+.btnlist .btn3{ background:url(../pic/singlebtn3.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/singlebtn3.png',sizingMethod='image');}
+.btnlist .btn4{ background:url(../pic/singlebtn4.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/singlebtn4.png',sizingMethod='image');}

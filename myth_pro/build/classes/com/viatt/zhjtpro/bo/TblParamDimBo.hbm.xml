@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblParamDimBo" table="tbl_sys_params">
+		<id name="paramCode" column="param_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id> 
+		<property name="paramName" column="param_name"
+			type="java.lang.String" />
+		<property name="paramValue" column="param_value"
+			type="java.lang.String" />
+		<property name="paramExp" column="param_exp"
+			type="java.lang.String" />
+	</class>
+</hibernate-mapping>

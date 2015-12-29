@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TCPIPServer>
+	<TCPIPService ID="I0002">
+		<!-- 服务信息接收接口(I0002) -->
+		<RequestDataMap importClass="com.ccb.net.models.I0002Model">
+			<dataElement name="serId" dataType="String" index="2"
+				lenght="8" />
+			<dataElement name="serType" dataType="String" index="3"
+				lenght="8" />
+			<dataElement name="serTitle" dataType="Double" index="4"
+				lenght="8" />
+			<dataElement name="context" dataType="String" index="5"
+				lenght="8" />
+			<dataElement name="creTime" dataType="String" index="6"
+				lenght="8" />
+			<dataElement name="creAuthor" dataType="String" index="7"
+				lenght="8" />
+			<dataElement name="creTel" dataType="String" index="8"
+				lenght="8" />
+			<dataElement name="equId" dataType="String" index="8"
+				lenght="9" />
+		</RequestDataMap>
+		<ResponseDataMap importClass="com.ccb.net.models.OutModel">
+			<!-- 返回代码 -->
+			<dataElement name="msgId" dataType="String" index="0"
+				lenght="8" />
+			<!-- 返回信息 -->
+			<dataElement name="reCode" dataType="String" index="1"
+				lenght="20" />
+			<dataElement name="reMsg" dataType="String" index="2"
+				lenght="20" />
+		</ResponseDataMap>
+	</TCPIPService>
+</TCPIPServer>

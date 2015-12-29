@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblRoleDimBo" table="tbl_role_dim">
+		<id name="roleCode" column="role_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="roleName" column="role_name" type="java.lang.String" />
+		<property name="orgCode" column="org_code" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

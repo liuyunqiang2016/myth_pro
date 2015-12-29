@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblMenuDimBo" table="tbl_menu_dim">
+		<id name="menuCode" column="menu_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="menuName" column="menu_name" type="java.lang.String" />
+		<property name="menuLev" column="menu_lev" type="java.lang.String" />
+		<property name="menuPar" column="menu_par" type="java.lang.String" />
+		<property name="menuUrl" column="menu_url" type="java.lang.String" />
+		<property name="menuView" column="menu_view" type="java.lang.String" />
+		<property name="menuExp" column="menu_exp" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

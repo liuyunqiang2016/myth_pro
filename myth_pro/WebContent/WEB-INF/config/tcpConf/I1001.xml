@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 公网开锁接口定义 -->
+<TCPIPServer>
+	<TCPIPService ID="I0010">
+		<RequestDataMap importClass="com.ccb.net.models.I1001Model">
+			<dataElement name="msgId" dataType="String" index="0"
+				lenght="8" />
+			<dataElement name="IpAdd" dataType="String" index="1"
+				lenght="8" />
+				
+			<dataElement name="roomID" dataType="String" index="2"
+				lenght="10" />
+		</RequestDataMap>
+		<ResponseDataMap importClass="com.ccb.net.models.OutModel">
+<!--			 返回代码 -->
+			<dataElement name="msgId" dataType="String" index="0"
+				lenght="8" />
+<!--			 返回信息 -->
+			<dataElement name="reCode" dataType="String" index="1"
+				lenght="20" />
+			<dataElement name="reMsg" dataType="String" index="2"
+				lenght="20" />
+		</ResponseDataMap>
+	</TCPIPService>
+</TCPIPServer>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblFingDimBo" table="tbl_fing_dim">
+		<id name="usrNo" column="usr_no" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="fingUsr" column="fing_usr" type="java.lang.String" />
+		<property name="roomCode" column="room_code" type="java.lang.String" />
+		<property name="fingImg1" column="fing_img1" type="java.lang.String" />
+		<property name="fingImg2" column="fing_img2" type="java.lang.String" />
+		<property name="fingState" column="fing_state" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

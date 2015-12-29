@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblItemDimBo" table="tbl_item_dim">
+		<id name="itemCode" column="item_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="itemName" column="item_name" type="java.lang.String" />
+		<property name="calCode" column="cal_code" type="java.lang.String" />
+		<property name="sfLev" column="sf_lev" type="java.lang.String" />
+		<property name="sfExp" column="sf_exp" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

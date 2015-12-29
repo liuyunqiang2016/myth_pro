@@ -1,0 +1,15 @@
+﻿#writecontent{ width:890px; margin:0px auto;}
+#writecontent .ul{ padding:15px 0px;}
+#writecontent .li{ padding:10px 0px;}
+#writecontent .label{ vertical-align:middle; float:left; text-align:right;  width:70px; padding:0px 10px 0px 0px; display:inline-block; font-size:14px; line-height:22px;}
+#writecontent .text{ border:solid 1px #D7D7D7; padding:0px 6px; vertical-align:middle; height:26px; line-height:26px;}
+#writecontent .span{ padding:0px 8px;  color:Red;}
+#writecontent .li .tag{ margin:0px 10px 0px 0px; cursor:pointer; padding:0px 0px 0px 15px; display:inline-block; height:28px; vertical-align:middle; background:url(../pic/tabbtn.jpg) no-repeat 0px -28px;}
+#writecontent .li .tag label{ font-size:14px; display:inline-block; height:28px; line-height:28px; padding:0px 15px 0px 0px;background:url(../pic/tabbtn.jpg) no-repeat right -28px;}
+#writecontent .li .tag:hover{ background-position:0px 0px;}
+#writecontent .li .tag:hover label{ background-position:right 0px;}
+#writecontent .btnli{ text-align:right;}
+#writecontent .btnli .checkbox{ vertical-align:middle; margin:-2px 5px 0px 0px;}
+#writecontent .btnli .btnspan{ margin:0px 0px 0px 10px;}
+#writecontent .editcontent{ background-color:White; border:solid 1px #E2E2E2; float:right; width:808px;}
+#writecontent .wordcontent{ padding:15px;}

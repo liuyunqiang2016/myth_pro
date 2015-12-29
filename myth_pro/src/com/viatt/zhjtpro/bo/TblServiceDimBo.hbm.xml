@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblServiceDimBo" table="tbl_service_dim">
+		<id name="serCode" column="ser_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="titile" column="titile" type="java.lang.String" />
+		<property name="type" column="type" type="java.lang.String" />
+		<property name="context" column="context" type="java.lang.String" />
+		<property name="createTime" column="create_time" type="java.lang.String" />
+		<property name="createUsr" column="create_usr" type="java.lang.String" />
+		<property name="chkState" column="chk_state" type="java.lang.String" />
+		<property name="chkUsr" column="chk_usr" type="java.lang.String" />
+		<property name="chkTime" column="chk_time" type="java.lang.String" />
+		<property name="chkRes" column="chk_res" type="java.lang.String" />
+		<property name="serExp" column="ser_exp" type="java.lang.String" />
+		<property name="equCode" column="equ_code" type="java.lang.String" />
+		<property name="serId" column="ser_id" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+﻿#maincontent{ padding:15px 15px;}
+#maincontent .title{ font-size:14px;}
+#maincontent .title .border{height:28px; padding:0px 0px 9px 0px; line-height:28px;}
+
+#maincontent .title .text{  vertical-align:middle; color:#989898; font-size:14px; height:24px; line-height:24px; padding:0px 8px; width:150px; border:solid 1px #D7D7D7;}
+#maincontent .title .time{ cursor:pointer; background:url(../pic/time_txt_bg.jpg) no-repeat right 1px White;}
+#maincontent .title span{ font-size:14px; vertical-align:middle; padding:0px 8px;}
+#maincontent .title label{ vertical-align:middle; font-size:14px; padding:0px 8px;}
+#maincontent .title .label{ padding-left:0px;}
+#maincontent .title .select{border:solid 1px #D7D7D7; height:22px; line-height:22px; vertical-align:middle;}
+#maincontent .title .btnspan{ margin:0px 0px 0px 10px; padding:0px 0px 0px 12px;}
+#maincontent .title .btnspan .pic{ padding:0px;}
+#auditlist{}
+#auditlist li{ _display:inline-block; margin:6px 0px;  position:relative; border:solid 1px #DADADA; background-color:White; padding:15px 25px;_padding:15px 25px 0px 25px;}
+#auditlist li:hover{ background-color:#FEF2C2;}
+#auditlist .img{ float:left; width:65px;}
+#auditlist .img img{ width:65px; height:81px;}
+#auditlist dl{ float:left; padding:10px 0px 0px 20px;}
+#auditlist dt{ height:30px; line-height:30px; color:#CB6507; font-size:18px; overflow:hidden;}
+#auditlist dt a{ color:#CB6507; font-size:18px;}
+#auditlist dd{ line-height:19px; color:#656565; padding:3px 0px 0px 0px;}
+#auditlist .advice{ cursor:pointer; width:150px; color:Black; position:absolute; right:35px; top:18px;}
+#auditlist .advice .pic{ margin:0px 15px 0px 0px; vertical-align:middle; width:80px; display:inline-block; height:80px; background:url(../pic/auditpic03.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/auditpic03.png',sizingMethod='image');}
+#auditlist .audit{ width:130px;  position:absolute; top:18px; right:195px;}
+#auditlist .audit .pic{ vertical-align:middle; margin:0px 10px 0px 0px; width:80px; height:80px; background:url(../pic/auditpic01.png) no-repeat 0px 0px; display:inline-block;}
+#auditlist .audit1{ color:#7CB94E;}
+#auditlist .audit1 .pic{background:url(../pic/auditpic01.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/auditpic01.png',sizingMethod='image');}
+#auditlist .audit2{ color:Red;}
+#auditlist .audit2 .pic{background:url(../pic/auditpic02.png) no-repeat 0px 0px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pic/auditpic02.png',sizingMethod='image');}
+
+#listdetail{z-index:99999900; display:none; position:absolute;  background-color:#9C9C9C; padding:0px 0px 0px 0px; width:980px; margin:0px auto;}
+#listdetail .h3{ font-size:14px; padding:0px 15px; color:White; height:35px; line-height:35px; background:url(../pic/title_bg.jpg) repeat-x 0px 0px;}
+#listdetail .h3 strong{ font-size:14px; color:White; background:url(../pic/edit_strong.jpg) no-repeat 0px 11px; padding:0px 0px 0px 30px; line-height:35px; display:block; height:35px;}
+#listdetail .content{ min-height:350px; _height:350px; border:solid 1px #DADADA; width:950px; background-color:White; padding:0px 0px 20px 0px; margin:15px auto 0px auto;}
+#listdetail .title{ font-size:14px; line-height:20px; color:Black; padding:5px 15px; border-bottom:solid 1px #DDDDDD;}
+#listdetail .title label{ font-size:14px; display:inline-block; width:75px;}
+#listdetail .title span{ font-size:14px; color:#CC670B;  display:inline-block; width:360px;}
+#listdetail dl{ padding:15px 0px 0px 0px; margin:0px 0px 0px 15px; width:920px; display:inline-block;}
+#listdetail dt{ text-align:right; font-size:14px; font-weight:bold; float:left; width:70px;}
+#listdetail dd{  float:right; width:845px; line-height:19px;}
+#listdetail .dd{ font-weight:bold;} 
+#listdetail .btns{ text-align:right; padding:15px 15px 10px 0px;}
+#listdetail .btns .btn{ cursor:pointer; margin:0px 0px 0px 10px; width:79px; height:28px; border:0px; font-size:14px; background:url(../pic/flowbtnbg.jpg) no-repeat 0px 0px;}
+#listdetail .textcontent{ width:952px; padding:15px 0px 0px 0px; margin:0px auto;}
+#listdetail .textcontent .textarea{ width:932px; border:0px; background-color:#FBF4D5; height:100px; padding:10px;}
+#listdetail .btns .l{ color:Black; padding:0px 0px 0px 18px; font-size:14px; float:left; height:28px; line-height:28px;}
+#listdetail .btns .l .flodbtn{ width:79px; vertical-align:middle; height:28px; border:0px; cursor:pointer; background:url(../pic/flodbtn.jpg) no-repeat 0px 0px;}

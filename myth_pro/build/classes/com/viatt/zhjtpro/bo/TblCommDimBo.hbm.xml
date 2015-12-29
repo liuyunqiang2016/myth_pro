@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblCommDimBo" table="tbl_comm_dim">
+		<id name="commCode" column="comm_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="commName" column="comm_name" type="java.lang.String" />
+		<property name="commAdds" column="comm_adds" type="java.lang.String" />
+		<property name="commArea" column="comm_area" type="java.lang.String" />
+		<property name="commUrl" column="comm_url" type="java.lang.String" />
+		<property name="commPro" column="comm_pro" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

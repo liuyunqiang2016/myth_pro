@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblOwnerDimBo" table="tbl_owner_dim">
+		<id name="ownerCode" column="owner_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="ownerName" column="owner_name" type="java.lang.String" />
+		<property name="ownerSex" column="owner_sex" type="java.lang.String" />
+		<property name="ownerNo" column="owner_no" type="java.lang.String" />
+		<property name="ownerDate" column="owner_date" type="java.lang.String" />
+		<property name="ownerTel" column="owner_tel" type="java.lang.String" />
+		<property name="ownerMob" column="owner_mob" type="java.lang.String" />
+		<property name="ownerPc" column="owner_pc" type="java.lang.String" />
+		<property name="ownerAdds" column="owner_adds" type="java.lang.String" />
+		<property name="ownerRelationNumber" column="owner_relation_number" type="java.lang.String" />
+		<property name="isSipAcount" column="sip_acount_state" type="java.lang.String" />
+		<property name="roomInfo" column="room_info" type="java.lang.String" />
+		<property name="fingId" column="fing_id" type="java.lang.String" />
+		<property name="cardId" column="card_id" type="java.lang.String" />
+		
+	</class> 
+</hibernate-mapping>

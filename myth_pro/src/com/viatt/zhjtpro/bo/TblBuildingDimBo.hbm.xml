@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblBuildingDimBo" table="tbl_building_dim">
+		<composite-id>
+			<key-property name="buildingCode" column="building_code" type="java.lang.String" />
+			<key-property name="areaCode" column="area_code" type="java.lang.String" />
+			<key-property name="commCode" column="comm_code" type="java.lang.String"/>
+		</composite-id>
+
+		<property name="buildingName" column="building_name" type="java.lang.String" />
+		<property name="buildingArea" column="building_area" type="java.lang.String" />
+		<property name="buildingArea2" column="building_area2" type="java.lang.String" />
+		<property name="buildingUrl" column="building_url" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

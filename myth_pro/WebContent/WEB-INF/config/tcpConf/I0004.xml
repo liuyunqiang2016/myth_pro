@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TCPIPServer>
+	<TCPIPService ID="I0004">
+		<!-- 设备状态检测接口(I0004) -->
+		<RequestDataMap importClass="com.ccb.net.models.I0004Model">
+			<dataElement name="equId" dataType="String" index="2"
+				lenght="8" />
+			<dataElement name="softid" dataType="String" index="3"
+				lenght="8" />
+			<dataElement name="softVis" dataType="String" index="4"
+				lenght="8" />
+		</RequestDataMap>
+		<ResponseDataMap importClass="com.ccb.net.models.I0003Model">
+			<!-- 返回代码 -->
+			<dataElement name="msgId" dataType="String" index="0"
+				lenght="8" />
+			<!-- 返回信息 -->
+			<dataElement name="reCode" dataType="String" index="1"
+				lenght="20" />
+			<dataElement name="reMsg" dataType="String" index="2"
+				lenght="20" />
+			<dataElement name="softID" dataType="String" index="3"
+				lenght="20" />
+			<dataElement name="softVis" dataType="String" index="4"
+				lenght="20" />
+			<dataElement name="downUrl" dataType="String" index="5"
+				lenght="20" />
+			<dataElement name="fileName" dataType="String" index="6"
+				lenght="20" />
+			<dataElement name="fileSize" dataType="String" index="7"
+				lenght="20" />
+		</ResponseDataMap>
+	</TCPIPService>
+</TCPIPServer>

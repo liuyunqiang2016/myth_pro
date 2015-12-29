@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblCalDimBo" table="tbl_cal_dim">
+		<id name="calCode" column="cal_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="calName" column="cal_name" type="java.lang.String" />
+		<property name="calExp" column="cal_exp" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

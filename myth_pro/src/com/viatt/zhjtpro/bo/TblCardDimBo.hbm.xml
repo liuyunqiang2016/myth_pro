@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblCardDimBo" table="tbl_card_dim">
+		<id name="cardNo" column="card_no" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="roomCode" column="room_code" type="java.lang.String" />
+		<property name="usrName" column="usr_name" type="java.lang.String" />
+		<property name="userNo" column="user_no" type="java.lang.String" />
+		<property name="state" column="state" type="java.lang.String" />
+		<property name="beginDate" column="begin_date" type="java.lang.String" />
+		<property name="endDate" column="end_date" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

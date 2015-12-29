@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblSoftFirmwareDimBo" table="tbl_soft_firmware_dim">
+		<id name="softCode" column="soft_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="softName" column="soft_name" type="java.lang.String" />
+		<property name="softVision" column="soft_vision" type="java.lang.String" />
+		<property name="softFn" column="soft_file_name" type="java.lang.String" />
+		<property name="softSize" column="soft_size" type="java.lang.String" />
+		<property name="updExp" column="upd_exp" type="java.lang.String" />
+		<property name="softState" column="soft_state" type="java.lang.String" />
+		<property name="equType" column="equ_type" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblRolemenuDimBo" table="tbl_role_menus">
+		<composite-id>
+			<key-property name="roleCode" column="role_code" type="java.lang.String" />
+			<key-property name="menuCode" column="menu_code" type="java.lang.String" />
+		</composite-id>
+
+	</class> 
+</hibernate-mapping>

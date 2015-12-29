@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!-- 配置数据源 -->
+	<!--  
+		<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+		<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+		<value>jdbc:oracle:thin:@192.168.1.101:1521:orcl</value>
+		</property>
+		<property name="username">
+		<value>jsyh</value>
+		</property>
+		<property name="password">
+		<value>jsyh</value>
+		</property>
+		</bean>
+	-->
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass"
+			value="org.gjt.mm.mysql.Driver" />
+		 
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mythdb?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="20150801" />
+		
+		<!--  
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/zhjtdb" />
+		<property name="user" value="root" />
+		<property name="password" value="root" />
+		--> 
+
+		<property name="minPoolSize" value="10" />
+		<property name="maxPoolSize" value="20" />
+		<property name="maxIdleTime" value="10" />
+		<property name="acquireIncrement" value="5" />
+		<property name="maxStatements" value="0" />
+		<property name="initialPoolSize" value="10" />
+		<property name="idleConnectionTestPeriod" value="30" />
+	</bean>
+
+	<!-- 配置SessionFactory -->
+	<bean id="mySessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="mappingResources">
+			<list>
+				<value>com/viatt/zhjtpro/bo/OrgDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblRoleDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblMenuDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblRolemenuDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblUserDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblParamDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblLogDimBo.hbm.xml</value>
+				
+				<value>com/viatt/zhjtpro/bo/TblCommDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblAreaDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/VAreaDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblBuildingDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/VBuildingDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblUnitDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/VUnitDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblHousetypeDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblRoomDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/VRoomDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblOwnerDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblCardDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblFingDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblContrDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblNoticeDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblServiceDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblAdDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblEquDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblSoftDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblSoftFirmwareDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblCalDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblItemDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblBillsDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblFingStatusDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblInfoStatusDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblVisitorDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblFingOpBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblInnerEquOpBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblInnerStatusDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblPropertyDimBo.hbm.xml</value>
+				<value>com/viatt/zhjtpro/bo/TblSipAcountDimBo.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- org.hibernate.dialect.OracleDialect -->
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="current_session_context_class">thread</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.EhCacheProvider
+				</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+				<prop key="connection.pool_size">10</prop>
+				<prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
+			</props>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<!-- 配置TransactionManager -->
+	<bean id="myTxManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<!-- 配置事务策略 -->
+	<tx:advice id="txAdvice" transaction-manager="myTxManager">
+		<tx:attributes>
+			<tx:method name="find*" propagation="REQUIRED"
+				read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="TransactionRollbackException"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="OP*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="productServiceMethods"
+			expression="execution(* com.viatt.zhjtpro.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="productServiceMethods" />
+	</aop:config>
+
+
+	<!-- 系统管理部分 -->
+	<bean id="orgDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.OrgDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="orgDimService"
+		class="com.viatt.zhjtpro.service.spring.OrgDimServiceSpringImpl">
+		<property name="orgDimDAO">
+			<ref local="orgDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblRoleDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblRoleDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblRoleDimService"
+		class="com.viatt.zhjtpro.service.spring.TblRoleDimServiceSpringImpl">
+		<property name="tblRoleDimDAO">
+			<ref local="tblRoleDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblMenuDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblMenuDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMenuDimService"
+		class="com.viatt.zhjtpro.service.spring.TblMenuDimServiceSpringImpl">
+		<property name="tblMenuDimDAO">
+			<ref local="tblMenuDimDAO" />
+		</property>
+	</bean>
+
+	<bean id="tblRolemenuDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblRolemenuDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblRolemenuDimService"
+		class="com.viatt.zhjtpro.service.spring.TblRolemenuDimServiceSpringImpl">
+		<property name="tblRolemenuDimDAO">
+			<ref local="tblRolemenuDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblUserDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblUserDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblUserDimService"
+		class="com.viatt.zhjtpro.service.spring.TblUserDimServiceSpringImpl">
+		<property name="tblUserDimDAO">
+			<ref local="tblUserDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblParamDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblParamDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblParamDimService"
+		class="com.viatt.zhjtpro.service.spring.TblParamDimServiceSpringImpl">
+		<property name="tblParamDimDAO">
+			<ref local="tblParamDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblLogDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblLogDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblLogDimService"
+		class="com.viatt.zhjtpro.service.spring.TblLogDimServiceSpringImpl">
+		<property name="tblLogDimDAO">
+			<ref local="tblLogDimDAO" />
+		</property>
+	</bean>
+	
+	<!-- 小区管理 -->
+	<bean id="tblCommDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblCommDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<!-- 物业公司管理 -->
+	<bean id="tblPropertyDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblPropertyDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<!-- sip账号管理 -->
+	<bean id="tblSipAcountDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblSipAcountDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblCommDimService"
+		class="com.viatt.zhjtpro.service.spring.TblCommDimServiceSpringImpl">
+		<property name="tblCommDimDAO">
+			<ref local="tblCommDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblPropertyDimService"
+		class="com.viatt.zhjtpro.service.spring.TblPropertyDimServiceSpringImpl">
+		<property name="tblPropertyDimDAO">
+			<ref local="tblPropertyDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblSipAcountDimService"
+		class="com.viatt.zhjtpro.service.spring.TblSipAcountDimServiceSpringImpl">
+		<property name="tblSipAcountDimDAO">
+			<ref local="tblSipAcountDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblAreaDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblAreaDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblAreaDimService"
+		class="com.viatt.zhjtpro.service.spring.TblAreaDimServiceSpringImpl">
+		<property name="tblAreaDimDAO">
+			<ref local="tblAreaDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblBuildingDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblBuildingDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblBuildingDimService"
+		class="com.viatt.zhjtpro.service.spring.TblBuildingDimServiceSpringImpl">
+		<property name="tblBuildingDimDAO">
+			<ref local="tblBuildingDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblUnitDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblUnitDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblUnitDimService"
+		class="com.viatt.zhjtpro.service.spring.TblUnitDimServiceSpringImpl">
+		<property name="tblUnitDimDAO">
+			<ref local="tblUnitDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblHousetypeDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblHousetypeDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblHousetypeDimService"
+		class="com.viatt.zhjtpro.service.spring.TblHousetypeDimServiceSpringImpl">
+		<property name="tblHousetypeDimDAO">
+			<ref local="tblHousetypeDimDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tblRoomDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblRoomDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblRoomDimService"
+		class="com.viatt.zhjtpro.service.spring.TblRoomDimServiceSpringImpl">
+		<property name="tblRoomDimDAO">
+			<ref local="tblRoomDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblOwnerDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblOwnerDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblOwnerDimService"
+		class="com.viatt.zhjtpro.service.spring.TblOwnerDimServiceSpringImpl">
+		<property name="tblOwnerDimDAO">
+			<ref local="tblOwnerDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblCardDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblCardDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblCardDimService"
+		class="com.viatt.zhjtpro.service.spring.TblCardDimServiceSpringImpl">
+		<property name="tblCardDimDAO">
+			<ref local="tblCardDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblFingDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblFingDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblFingDimService"
+		class="com.viatt.zhjtpro.service.spring.TblFingDimServiceSpringImpl">
+		<property name="tblFingDimDAO">
+			<ref local="tblFingDimDAO" />
+		</property>
+		<property name="paramService">
+			<ref local="tblParamDimService" />
+		</property>
+		<property name="equDimService">
+			<ref local="tblEquDimService" />
+		</property>
+	</bean>
+	<bean id="tblContrDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblContrDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblContrDimService"
+		class="com.viatt.zhjtpro.service.spring.TblContrDimServiceSpringImpl">
+		<property name="tblContrDimDAO">
+			<ref local="tblContrDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblNoticeDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblNoticeDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblNoticeDimService"
+		class="com.viatt.zhjtpro.service.spring.TblNoticeDimServiceSpringImpl">
+		<property name="tblNoticeDimDAO">
+			<ref local="tblNoticeDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblAdDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblAdDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblAdDimService"
+		class="com.viatt.zhjtpro.service.spring.TblAdDimServiceSpringImpl">
+		<property name="tblAdDimDAO">
+			<ref local="tblAdDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblServiceDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblServiceDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblServiceDimService"
+		class="com.viatt.zhjtpro.service.spring.TblServiceDimServiceSpringImpl">
+		<property name="tblServiceDimDAO">
+			<ref local="tblServiceDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblEquDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblEquDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblEquDimService"
+		class="com.viatt.zhjtpro.service.spring.TblEquDimServiceSpringImpl">
+		<property name="tblEquDimDAO">
+			<ref local="tblEquDimDAO" />
+		</property>
+		<property name="tblSoftDimDAO">
+			<ref local="tblSoftDimDAO" />
+		</property>
+		<property name="paramService">
+			<ref local="tblParamDimService" />
+		</property>
+	</bean>
+	<bean id="tblSoftDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblSoftDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblSoftFirmwareDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblSoftFirmwareDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblSoftDimService"
+		class="com.viatt.zhjtpro.service.spring.TblSoftDimServiceSpringImpl">
+		<property name="tblSoftDimDAO">
+			<ref local="tblSoftDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblSoftFirmwareDimService"
+		class="com.viatt.zhjtpro.service.spring.TblSoftFirmwareDimServiceSpringImpl">
+		<property name="tblSoftFirmwareDimDAO">
+			<ref local="tblSoftFirmwareDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblCalDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblCalDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblCalDimService"
+		class="com.viatt.zhjtpro.service.spring.TblCalDimServiceSpringImpl">
+		<property name="tblCalDimDAO">
+			<ref local="tblCalDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblItemDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblItemDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblItemDimService"
+		class="com.viatt.zhjtpro.service.spring.TblItemDimServiceSpringImpl">
+		<property name="tblItemDimDAO">
+			<ref local="tblItemDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblBillsDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblBillsDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblBillsDimService"
+		class="com.viatt.zhjtpro.service.spring.TblBillsDimServiceSpringImpl">
+		<property name="tblBillsDimDAO">
+			<ref local="tblBillsDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblInfoStatusDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblInfoStatusDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblInfoStatusDimService"
+		class="com.viatt.zhjtpro.service.spring.TblInfoStatusDimServiceSpringImpl">
+		<property name="tblInfoStatusDimDAO">
+			<ref local="tblInfoStatusDimDAO" />
+		</property>
+	</bean>
+	
+	<!-- 指纹发送相关业务对象 -->
+	<bean id="tblFingStatusDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblFingStatusDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblFingStatusDimService"
+		class="com.viatt.zhjtpro.service.spring.TblFingStatusDimServiceSpringImpl">
+		<property name="tblFingStatusDimDAO">
+			<ref local="tblFingStatusDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblVisitorDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblVisitorDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblVisitorDimService"
+		class="com.viatt.zhjtpro.service.spring.TblVisitorDimServiceSpringImpl">
+		<property name="tblVisitorDimDAO">
+			<ref local="tblVisitorDimDAO" />
+		</property>
+	</bean>
+	<bean id="tblFingOpDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblFingOpHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblFingOpService"
+		class="com.viatt.zhjtpro.service.spring.TblFingOpServiceSpringImpl">
+		<property name="tblFingOpDAO">
+			<ref local="tblFingOpDAO" />
+		</property>
+	</bean>
+	<bean id="tblInnerEquOpDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblInnerEquOpHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblInnerEquOpService"
+		class="com.viatt.zhjtpro.service.spring.TblInnerEquOpServiceSpringImpl">
+		<property name="tblInnerEquOpDAO">
+			<ref local="tblInnerEquOpDAO" />
+		</property>
+	</bean>
+	<bean id="tblInnerStatusDimDAO"
+		class="com.viatt.zhjtpro.dao.hibernate.TblInnerStatusDimHibernateDAO">
+		<property name="sessionFactory">
+			<ref local="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblInnerStatusDimService"
+		class="com.viatt.zhjtpro.service.spring.TblInnerStatusDimServiceSpringImpl">
+		<property name="tblInnerStatusDimDAO">
+			<ref local="tblInnerStatusDimDAO" />
+		</property>
+	</bean>
+</beans>

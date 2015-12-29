@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<display-name>zhjtxt</display-name>
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>
+			com.viatt.zhjtpro.common.SetCharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/config/spring/applicationContext.xml
+		</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>SpringContextServlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.context.ContextLoaderServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>mySessionFactory</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>com.viatt.zhjtpro.time.TimeListener</listener-class>
+	</listener>
+
+	<!-- Standard Action Servlet Configuration (with debugging) -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/config/struts/struts-config.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!-- Standard Action Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TcpipService</servlet-name>
+		<servlet-class>
+			biz.common.net.tcp.TCPIPServiceServlet
+		</servlet-class>
+		<init-param>
+			<param-name>servletContextFile</param-name>
+			<param-value>
+				WEB-INF/config/TcpServiceContextList.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>confFilePath</param-name>
+			<param-value>WEB-INF/config/tcpConf</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>StartupServlet</servlet-name>
+		<servlet-class>
+			com.viatt.zhjtpro.time.StartupServlet
+		</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	
+	<!--  生成验证码 -->
+	<servlet>
+		<servlet-name>authImg</servlet-name>
+		<servlet-class>com.ken.myth.securityCode.AuthImg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>authImg</servlet-name>
+		<url-pattern>/authImg</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/taglib/c.tld</taglib-location>
+	</taglib>
+</web-app>

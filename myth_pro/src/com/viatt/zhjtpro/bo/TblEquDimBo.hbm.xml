@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblEquDimBo" table="tbl_equ_dim">
+		<id name="equCode" column="equ_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="equName" column="equ_name" type="java.lang.String" />
+		<property name="equType" column="equ_type" type="java.lang.String" />
+		<property name="equAccid" column="equ_acc_id" type="java.lang.String" />
+		<property name="ipAdd" column="ip_add" type="java.lang.String" />
+		<property name="macAdd" column="mac_add" type="java.lang.String" />
+		<property name="equState" column="equ_state" type="java.lang.String" />
+		<property name="equAdd" column="equ_add" type="java.lang.String" />
+		<property name="lastdate" column="lastdate" type="java.lang.String" />
+		<property name="commID" column="comm_code" type="java.lang.String" />
+		<property name="areaID" column="area_code" type="java.lang.String" />
+		<property name="unitID" column="unit_code" type="java.lang.String" />
+		<property name="buldID" column="building_code" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblLogDimBo" table="tbl_sys_logs">
+		<id name="logCode" column="log_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="logContent" column="log_content" type="java.lang.String" />
+		<property name="operName" column="oper_name" type="java.lang.String" />
+		<property name="creTime" column="cre_time" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

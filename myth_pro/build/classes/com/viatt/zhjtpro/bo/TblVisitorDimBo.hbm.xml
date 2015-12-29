@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblVisitorDimBo" table="tbl_visitor_dim">
+		<composite-id>
+			<key-property name="roomCode" column="room_code" type="java.lang.String" />
+			<key-property name="equCode" column="equ_code" type="java.lang.String" />
+			<key-property name="visiTime" column="visi_time" type="java.lang.String" />
+		</composite-id>
+
+		<property name="comuTime" column="comu_time" type="java.lang.String" />
+		<property name="visiImg" column="visi_img" type="java.lang.String" />
+		<property name="visiImg1" column="visi_img1" type="java.lang.String" />
+		<property name="visiImg2" column="visi_img2" type="java.lang.String" />
+		<property name="visiImg3" column="visi_img3" type="java.lang.String" />
+		<property name="visiImg4" column="visi_img4" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>

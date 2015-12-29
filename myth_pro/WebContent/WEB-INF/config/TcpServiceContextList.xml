@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<servletContext>
+	<!-- 
+		服务定义:
+		TCPIPServerService   
+		ListenPort			 port：端口, maxConnection:最大连接, poolThread:是否使用线程池, poolSize:线程池 keepAlive:是否长连接
+		CommProcessor		 通讯协议处理接口
+		FormatClass          拆包解包程序
+	-->
+	<TCPIPServerService name="testService">
+		<ListenPort port="37575" maxConnection="2000" poolThread="true"
+			poolSize="100" keepAlive="true" />
+		<CommProcessor>
+			biz.common.net.tcp.IppCommProcessor
+		</CommProcessor>
+		<FormatStyle class="biz.common.format.charsplit.CharSplitFormat"
+			splitChar="|" />
+	</TCPIPServerService>
+	<!--
+		交易报文定义：
+		TCPIPServiceDef：
+		ServiceMap：交易定义明细，MapEntry节点中value值对应TCPIPService中ID相等的交易报文定义
+		BeanName:Spring中对应的serviceName OpName:对应BeanName中同名Function
+	-->
+	<TCPIPServiceDef ServiceID="testService">
+		<MapEntry key="I0002" value="I0002" BeanName="tblServiceDimService"
+			OpName="OPFwxx" />
+		<MapEntry key="I0004" value="I0004" BeanName="tblEquDimService"
+			OpName="OPEqzt" />
+		<MapEntry key="I0005" value="I0005" BeanName="tblEquDimService"
+			OpName="OPEqjr" />
+		<MapEntry key="I0010" value="I0010" BeanName="tblFingDimService"
+			OpName="OPEfds" />
+		<MapEntry key="I1001" value="I1001" BeanName="tblEquDimService"
+			OpName="OPFpop" />
+	</TCPIPServiceDef>
+</servletContext>

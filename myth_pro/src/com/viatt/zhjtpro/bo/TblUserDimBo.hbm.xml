@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblUserDimBo" table="tbl_usr_dim">
+		<id name="userCode" column="user_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id> 
+		<property name="logName" column="log_name"
+			type="java.lang.String" />
+		<property name="logPwd" column="log_pwd"
+			type="java.lang.String" />
+		<property name="userName" column="user_name"
+			type="java.lang.String" />
+		<property name="lastLogtime" column="last_log_time"
+			type="java.lang.String" />
+		<property name="userState" column="user_state"
+			type="java.lang.String" />
+		<property name="roleCode" column="role_code"
+			type="java.lang.String" />
+		<property name="propertyId" column="property_Id"
+			type="java.lang.String" />
+		<property name="deptName" column="dept_name"
+			type="java.lang.String" />
+		<property name="orgCode" column="org_code"
+			type="java.lang.String" />
+		<property name="emailAddress" column="email_address" 
+			type="java.lang.String" />
+		<property name="telNum" column="tel_num" 
+			type="java.lang.String" />
+	</class>
+</hibernate-mapping>

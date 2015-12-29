@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblFingStatusDimBo" table="tbl_fing_status_dim">
+		<id name="statusId" type="java.lang.Integer" >
+			<column name="status_id"></column>
+			<generator class="native"/>
+		</id>
+		
+		<property name="equCode" type="java.lang.String">
+			 <column name="equ_code" />
+		</property>
+		<property name="ipAdd" type="java.lang.String">
+			 <column name="ipAdd" />
+		</property>
+		<property name="usrNo" type="java.lang.String">
+			 <column name="usrNo" />
+		</property>
+		<property name="fingImg1" type="java.lang.String">
+			 <column name="fing_img1" />
+		</property>
+		<property name="fingImg2" type="java.lang.String">
+			 <column name="fing_img2" />
+		</property>
+		<property name="opType" type="java.lang.String">
+			 <column name="op_type" />
+		</property>
+		<property name="sendZt" type="java.lang.String">
+			 <column name="sendZt" />
+		</property>
+		
+<!--		<key-property name="equCode" column="equ_code" type="java.lang.String" />-->
+<!--		<key-property name="fingImg1" column="fing_img1" type="java.lang.String" />-->
+<!--		<key-property name="fingImg2" column="fing_img2" type="java.lang.String" />-->
+<!--		<key-property name="opType" column="op_type" type="java.lang.String" />-->
+<!--		<key-property name="sendZt" column="sendzt" type="java.lang.String" />-->
+	</class> 
+</hibernate-mapping>

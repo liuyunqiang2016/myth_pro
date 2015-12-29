@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TCPIPServer>
+	<TCPIPService ID="I0005">
+		<!-- 设备接入接口(I0005) -->
+		<RequestDataMap importClass="com.ccb.net.models.I0005Model">
+			<dataElement name="equId" dataType="String" index="2"
+				lenght="8" />
+			<dataElement name="roomID" dataType="String" index="3"
+				lenght="8" />
+			<dataElement name="IpAdd" dataType="Double" index="4"
+				lenght="8" />
+			<dataElement name="accessID" dataType="String" index="5"
+				lenght="8" />
+			<dataElement name="equType" dataType="String" index="6"
+				lenght="8" />
+			<dataElement name="equState" dataType="String" index="7"
+				lenght="8" />
+			<dataElement name="equMac" dataType="String" index="8"
+				lenght="8" />
+			<dataElement name="commID" dataType="String" index="9"
+				lenght="8" />
+			<dataElement name="areaID" dataType="String" index="10"
+				lenght="8" />
+			<dataElement name="unitID" dataType="String" index="11"
+				lenght="8" />
+			<dataElement name="buldID" dataType="String" index="12"
+				lenght="8" />
+		</RequestDataMap>
+		<ResponseDataMap importClass="com.ccb.net.models.OutModel">
+			<!-- 返回代码 -->
+			<dataElement name="msgId" dataType="String" index="0"
+				lenght="8" />
+			<!-- 返回信息 -->
+			<dataElement name="reCode" dataType="String" index="1"
+				lenght="20" />
+			<dataElement name="reMsg" dataType="String" index="2"
+				lenght="20" />
+		</ResponseDataMap>
+	</TCPIPService>
+</TCPIPServer>

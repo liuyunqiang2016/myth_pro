@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.viatt.zhjtpro.bo">
+	<class name="TblNoticeDimBo" table="tbl_notice_dim">
+		<id name="noticeCode" column="notice_code" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+
+		<property name="titile" column="titile" type="java.lang.String" />
+		<property name="context" column="context" type="java.lang.String" />
+		<property name="createTime" column="create_time" type="java.lang.String" />
+		<property name="createUsr" column="create_usr" type="java.lang.String" />
+		<property name="beginDate" column="begin_date" type="java.lang.String" />
+		<property name="endDate" column="end_date" type="java.lang.String" />
+		<property name="equType" column="equ_type" type="java.lang.String" />
+	</class> 
+</hibernate-mapping>
